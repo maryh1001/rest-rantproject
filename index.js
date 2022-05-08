@@ -1,5 +1,5 @@
 // require needed modules
-require('dontenv').config()
+require('dotenv').config()
 const express = require('express')
 
 // initialize
