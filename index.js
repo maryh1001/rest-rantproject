@@ -5,12 +5,15 @@ const express = require('express')
 // initialize
 const app = express()
 
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine ())
+
 // import router from places
 app.use('/places', require('./controllers/places'))
 
 // homepage route
 app.get('/', function (req, res) {
-    res.send('hello')
+    res.render('home')
 })
 
 app.get('*', (rew, res) => {
